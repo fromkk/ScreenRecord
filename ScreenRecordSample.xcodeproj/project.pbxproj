@@ -14,6 +14,14 @@
 		AD9F71641D7BF24C00100EAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F71621D7BF24C00100EAE /* LaunchScreen.storyboard */; };
 		AD9F716F1D7BF24D00100EAE /* ScreenRecordSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F716E1D7BF24D00100EAE /* ScreenRecordSampleTests.swift */; };
 		AD9F717A1D7BF24D00100EAE /* ScreenRecordSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F71791D7BF24D00100EAE /* ScreenRecordSampleUITests.swift */; };
+		AD9F718F1D7BF9AF00100EAE /* ScreenRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9F718E1D7BF9AF00100EAE /* ScreenRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD9F71961D7BF9AF00100EAE /* ScreenRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9F718C1D7BF9AF00100EAE /* ScreenRecord.framework */; };
+		AD9F719D1D7BF9AF00100EAE /* ScreenRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F719C1D7BF9AF00100EAE /* ScreenRecordTests.swift */; };
+		AD9F71A11D7BF9AF00100EAE /* ScreenRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9F718C1D7BF9AF00100EAE /* ScreenRecord.framework */; };
+		AD9F71A21D7BF9AF00100EAE /* ScreenRecord.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD9F718C1D7BF9AF00100EAE /* ScreenRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AD9F71AB1D7BF9E900100EAE /* ScreenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F71AA1D7BF9E900100EAE /* ScreenRecord.swift */; };
+		AD9F71AD1D7C03F000100EAE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9F71AC1D7C03F000100EAE /* AVFoundation.framework */; };
+		AD9F71AF1D7C40E100100EAE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9F71AE1D7C40E100100EAE /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +39,42 @@
 			remoteGlobalIDString = AD9F71551D7BF24C00100EAE;
 			remoteInfo = ScreenRecordSample;
 		};
+		AD9F71971D7BF9AF00100EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD9F714E1D7BF24C00100EAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD9F718B1D7BF9AF00100EAE;
+			remoteInfo = ScreenRecord;
+		};
+		AD9F71991D7BF9AF00100EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD9F714E1D7BF24C00100EAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD9F71551D7BF24C00100EAE;
+			remoteInfo = ScreenRecordSample;
+		};
+		AD9F719F1D7BF9AF00100EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD9F714E1D7BF24C00100EAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD9F718B1D7BF9AF00100EAE;
+			remoteInfo = ScreenRecord;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD9F71A61D7BF9B000100EAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AD9F71A21D7BF9AF00100EAE /* ScreenRecord.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD9F71561D7BF24C00100EAE /* ScreenRecordSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRecordSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +90,15 @@
 		AD9F71751D7BF24D00100EAE /* ScreenRecordSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenRecordSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9F71791D7BF24D00100EAE /* ScreenRecordSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecordSampleUITests.swift; sourceTree = "<group>"; };
 		AD9F717B1D7BF24D00100EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD9F718C1D7BF9AF00100EAE /* ScreenRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreenRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9F718E1D7BF9AF00100EAE /* ScreenRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenRecord.h; sourceTree = "<group>"; };
+		AD9F71901D7BF9AF00100EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD9F71951D7BF9AF00100EAE /* ScreenRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9F719C1D7BF9AF00100EAE /* ScreenRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecordTests.swift; sourceTree = "<group>"; };
+		AD9F719E1D7BF9AF00100EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD9F71AA1D7BF9E900100EAE /* ScreenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRecord.swift; sourceTree = "<group>"; };
+		AD9F71AC1D7C03F000100EAE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AD9F71AE1D7C40E100100EAE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9F71AF1D7C40E100100EAE /* MediaPlayer.framework in Frameworks */,
+				AD9F71A11D7BF9AF00100EAE /* ScreenRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,15 +125,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD9F71881D7BF9AF00100EAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9F71AD1D7C03F000100EAE /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9F71921D7BF9AF00100EAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9F71961D7BF9AF00100EAE /* ScreenRecord.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AD9F714D1D7BF24C00100EAE = {
 			isa = PBXGroup;
 			children = (
+				AD9F71AE1D7C40E100100EAE /* MediaPlayer.framework */,
+				AD9F71AC1D7C03F000100EAE /* AVFoundation.framework */,
 				AD9F71581D7BF24C00100EAE /* ScreenRecordSample */,
 				AD9F716D1D7BF24D00100EAE /* ScreenRecordSampleTests */,
 				AD9F71781D7BF24D00100EAE /* ScreenRecordSampleUITests */,
+				AD9F718D1D7BF9AF00100EAE /* ScreenRecord */,
+				AD9F719B1D7BF9AF00100EAE /* ScreenRecordTests */,
 				AD9F71571D7BF24C00100EAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +164,8 @@
 				AD9F71561D7BF24C00100EAE /* ScreenRecordSample.app */,
 				AD9F716A1D7BF24D00100EAE /* ScreenRecordSampleTests.xctest */,
 				AD9F71751D7BF24D00100EAE /* ScreenRecordSampleUITests.xctest */,
+				AD9F718C1D7BF9AF00100EAE /* ScreenRecord.framework */,
+				AD9F71951D7BF9AF00100EAE /* ScreenRecordTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +201,37 @@
 			path = ScreenRecordSampleUITests;
 			sourceTree = "<group>";
 		};
+		AD9F718D1D7BF9AF00100EAE /* ScreenRecord */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F718E1D7BF9AF00100EAE /* ScreenRecord.h */,
+				AD9F71901D7BF9AF00100EAE /* Info.plist */,
+				AD9F71AA1D7BF9E900100EAE /* ScreenRecord.swift */,
+			);
+			path = ScreenRecord;
+			sourceTree = "<group>";
+		};
+		AD9F719B1D7BF9AF00100EAE /* ScreenRecordTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD9F719C1D7BF9AF00100EAE /* ScreenRecordTests.swift */,
+				AD9F719E1D7BF9AF00100EAE /* Info.plist */,
+			);
+			path = ScreenRecordTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AD9F71891D7BF9AF00100EAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9F718F1D7BF9AF00100EAE /* ScreenRecord.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		AD9F71551D7BF24C00100EAE /* ScreenRecordSample */ = {
@@ -135,10 +241,12 @@
 				AD9F71521D7BF24C00100EAE /* Sources */,
 				AD9F71531D7BF24C00100EAE /* Frameworks */,
 				AD9F71541D7BF24C00100EAE /* Resources */,
+				AD9F71A61D7BF9B000100EAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AD9F71A01D7BF9AF00100EAE /* PBXTargetDependency */,
 			);
 			name = ScreenRecordSample;
 			productName = ScreenRecordSample;
@@ -181,6 +289,43 @@
 			productReference = AD9F71751D7BF24D00100EAE /* ScreenRecordSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AD9F718B1D7BF9AF00100EAE /* ScreenRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD9F71A31D7BF9B000100EAE /* Build configuration list for PBXNativeTarget "ScreenRecord" */;
+			buildPhases = (
+				AD9F71871D7BF9AF00100EAE /* Sources */,
+				AD9F71881D7BF9AF00100EAE /* Frameworks */,
+				AD9F71891D7BF9AF00100EAE /* Headers */,
+				AD9F718A1D7BF9AF00100EAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenRecord;
+			productName = ScreenRecord;
+			productReference = AD9F718C1D7BF9AF00100EAE /* ScreenRecord.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD9F71941D7BF9AF00100EAE /* ScreenRecordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD9F71A71D7BF9B000100EAE /* Build configuration list for PBXNativeTarget "ScreenRecordTests" */;
+			buildPhases = (
+				AD9F71911D7BF9AF00100EAE /* Sources */,
+				AD9F71921D7BF9AF00100EAE /* Frameworks */,
+				AD9F71931D7BF9AF00100EAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD9F71981D7BF9AF00100EAE /* PBXTargetDependency */,
+				AD9F719A1D7BF9AF00100EAE /* PBXTargetDependency */,
+			);
+			name = ScreenRecordTests;
+			productName = ScreenRecordTests;
+			productReference = AD9F71951D7BF9AF00100EAE /* ScreenRecordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +347,13 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = AD9F71551D7BF24C00100EAE;
 					};
+					AD9F718B1D7BF9AF00100EAE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					AD9F71941D7BF9AF00100EAE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AD9F71551D7BF24C00100EAE;
+					};
 				};
 			};
 			buildConfigurationList = AD9F71511D7BF24C00100EAE /* Build configuration list for PBXProject "ScreenRecordSample" */;
@@ -220,6 +372,8 @@
 				AD9F71551D7BF24C00100EAE /* ScreenRecordSample */,
 				AD9F71691D7BF24D00100EAE /* ScreenRecordSampleTests */,
 				AD9F71741D7BF24D00100EAE /* ScreenRecordSampleUITests */,
+				AD9F718B1D7BF9AF00100EAE /* ScreenRecord */,
+				AD9F71941D7BF9AF00100EAE /* ScreenRecordTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +397,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD9F71731D7BF24D00100EAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9F718A1D7BF9AF00100EAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9F71931D7BF9AF00100EAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,6 +445,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD9F71871D7BF9AF00100EAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9F71AB1D7BF9E900100EAE /* ScreenRecord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD9F71911D7BF9AF00100EAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD9F719D1D7BF9AF00100EAE /* ScreenRecordTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,6 +473,21 @@
 			isa = PBXTargetDependency;
 			target = AD9F71551D7BF24C00100EAE /* ScreenRecordSample */;
 			targetProxy = AD9F71761D7BF24D00100EAE /* PBXContainerItemProxy */;
+		};
+		AD9F71981D7BF9AF00100EAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD9F718B1D7BF9AF00100EAE /* ScreenRecord */;
+			targetProxy = AD9F71971D7BF9AF00100EAE /* PBXContainerItemProxy */;
+		};
+		AD9F719A1D7BF9AF00100EAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD9F71551D7BF24C00100EAE /* ScreenRecordSample */;
+			targetProxy = AD9F71991D7BF9AF00100EAE /* PBXContainerItemProxy */;
+		};
+		AD9F71A01D7BF9AF00100EAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD9F718B1D7BF9AF00100EAE /* ScreenRecord */;
+			targetProxy = AD9F719F1D7BF9AF00100EAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -349,7 +548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ScreenRecordSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.ScreenRecordSample;
@@ -412,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ScreenRecordSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.ScreenRecordSample;
@@ -465,6 +666,69 @@
 			};
 			name = Release;
 		};
+		AD9F71A41D7BF9B000100EAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ScreenRecord/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.ScreenRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD9F71A51D7BF9B000100EAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ScreenRecord/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.ScreenRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD9F71A81D7BF9B000100EAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenRecordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.ScreenRecordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScreenRecordSample.app/ScreenRecordSample";
+			};
+			name = Debug;
+		};
+		AD9F71A91D7BF9B000100EAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenRecordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.ScreenRecordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScreenRecordSample.app/ScreenRecordSample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,6 +762,22 @@
 			buildConfigurations = (
 				AD9F71851D7BF24D00100EAE /* Debug */,
 				AD9F71861D7BF24D00100EAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD9F71A31D7BF9B000100EAE /* Build configuration list for PBXNativeTarget "ScreenRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD9F71A41D7BF9B000100EAE /* Debug */,
+				AD9F71A51D7BF9B000100EAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD9F71A71D7BF9B000100EAE /* Build configuration list for PBXNativeTarget "ScreenRecordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD9F71A81D7BF9B000100EAE /* Debug */,
+				AD9F71A91D7BF9B000100EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
