@@ -15,11 +15,11 @@ func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
 }
 
 class ViewController: UIViewController {
-    
+
     enum Constants {
         static let recordButtonSize: CGSize = CGSize(width: 80.0, height: 80.0)
     }
-    
+
     lazy var drawableView: DrawableView = {
         let drawableView: DrawableView = DrawableView()
         drawableView.backgroundColor = UIColor.whiteColor()
@@ -29,17 +29,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.insertSubview(self.drawableView, atIndex: 0)
-        
+
         self.recordButton.layer.cornerRadius = Constants.recordButtonSize.width / 2.0
         self.recordButton.layer.masksToBounds = true
-        
+
         ScreenRecord.shared.delegate = self
         ScreenRecord.shared.frameRate = ScreenRecord.Framerate.f30
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     var didLayouted: Bool = false
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -65,14 +65,7 @@ class ViewController: UIViewController {
         if !self.isRecording {
             ScreenRecord.shared.start()
         } else {
-            ScreenRecord.shared.stop({ [unowned self] (url) in
-                guard let url = url else {
-                    return
-                }
-                
-                let mediaPlayerViewController: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: url)
-                self.presentViewController(mediaPlayerViewController, animated: true, completion: nil)
-            })
+            ScreenRecord.shared.stop()
         }
     }
 }
@@ -80,21 +73,32 @@ class ViewController: UIViewController {
 extension ViewController: ScreenRecorderDelegate {
     func screenRecordDidStart(screenRecord: ScreenRecord) {
         print(#function)
-        
+
         self.isRecording = true
     }
-    
-    func screenRecordDidCompletion(screenRecord: ScreenRecord) {
+
+    func screenRecordDidStop(screenRecord: ScreenRecord) {
         print(#function)
-        
-        self.isRecording = false
     }
-    
+
+    func screenRecordDidCompletion(screenRecord: ScreenRecord, url: NSURL?) {
+        print(#function, url)
+
+        self.isRecording = false
+
+        guard let url = url else {
+            return
+        }
+
+        let mediaPlayerViewController: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: url)
+        self.presentViewController(mediaPlayerViewController, animated: true, completion: nil)
+    }
+
     func screenRecord(screenRecord: ScreenRecord, didFailed error: ScreenRecord.Error) {
         print(#function)
-        
+
         print(error)
-        
+
         self.isRecording = false
     }
 }
