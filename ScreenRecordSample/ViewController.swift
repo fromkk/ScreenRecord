@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         self.recordButton.layer.cornerRadius = Constants.recordButtonSize.width / 2.0
         self.recordButton.layer.masksToBounds = true
 
+        ScreenRecord.shared.clearCaches()
         ScreenRecord.shared.delegate = self
         ScreenRecord.shared.frameRate = ScreenRecord.Framerate.f30
         // Do any additional setup after loading the view, typically from a nib.

@@ -146,6 +146,24 @@ public protocol ScreenRecordable: class {
             self.delegate?.screenRecord(self, didFailed: error)
         }
     }
+
+    public func clearCaches() {
+        guard let cacheDir: String = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first else {
+            return
+        }
+        let dir: String = "\(cacheDir)/\(Constants.identifier)"
+
+        /// create directory if not exists.
+        let fileManager: NSFileManager = NSFileManager()
+        if fileManager.fileExistsAtPath(dir) {
+            do {
+                try fileManager.removeItemAtPath(dir)
+            } catch {
+                print("failed remove cache dir")
+                return
+            }
+        }
+    }
 }
 
 extension ScreenRecord: ScreenRecordable {
