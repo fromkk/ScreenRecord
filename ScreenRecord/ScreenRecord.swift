@@ -28,6 +28,29 @@ public protocol ScreenRecordable: class {
 }
 
 @objc public class ScreenRecord: NSObject {
+    public enum Framerate {
+        case f6
+        case f10
+        case f15
+        case f30
+        case f60
+
+        func frameInterval() -> Int {
+            switch self {
+            case .f6:
+                return 60 / 6
+            case .f10:
+                return 60 / 10
+            case .f15:
+                return 60 / 15
+            case .f30:
+                return 60 / 30
+            case .f60:
+                return 60 / 60
+            }
+        }
+    }
+
     public static let shared: ScreenRecord = ScreenRecord()
     private override init() {
         self.queue = dispatch_queue_create(Constants.queue.cStringUsingEncoding(NSUTF8StringEncoding)!, nil)
@@ -54,6 +77,7 @@ public protocol ScreenRecordable: class {
     
     /// Public
     public var delegate: ScreenRecorderDelegate? = nil
+    public var frameRate: Framerate = Framerate.f30
     
     /// Private
     private var view: UIView?
@@ -178,7 +202,7 @@ extension ScreenRecord: ScreenRecordable {
         
         ///displayLink
         self.displayLink = CADisplayLink(target: self, selector: #selector(ScreenRecord.captureFrame(_:)))
-        self.displayLink?.frameInterval = 2
+        self.displayLink?.frameInterval = self.frameRate.frameInterval()
         self.displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         
         self.delegate?.screenRecordDidStart(self)
