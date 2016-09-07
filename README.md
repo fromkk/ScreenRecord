@@ -15,7 +15,7 @@ ScreenRecord is framework work on iOS with Swift.
 add line to **Cartfile**
 
 ```
-github "fromkk/ScreenRecord" == 0.0.1
+github "fromkk/ScreenRecord" == 0.0.2
 ```
 
 and `carthage update` and Project setting. ([Reference](https://github.com/carthage/carthage))
