@@ -27,6 +27,7 @@ public protocol ScreenRecordable: class {
     associatedtype Completion
     func start(let view: UIView?) -> Void
     func stop() -> Void
+    var isRecording: Bool { get }
 }
 
 @objc public class ScreenRecord: NSObject {
@@ -80,6 +81,7 @@ public protocol ScreenRecordable: class {
     /// Public
     public var delegate: ScreenRecorderDelegate? = nil
     public var frameRate: Framerate = Framerate.f30
+    private (set) public var isRecording: Bool = false
 
     /// Private
     private var view: UIView?
@@ -91,7 +93,6 @@ public protocol ScreenRecordable: class {
     private var firstFrameTime: CFAbsoluteTime?
     private var displayLink: CADisplayLink?
     private var startTimeStamp: CFTimeInterval = 0.0
-    private var isRecording: Bool = false
 
     private func setup() -> Error? {
         guard let cacheDir: String = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first else {
