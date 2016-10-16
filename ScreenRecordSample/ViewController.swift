@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     lazy var drawableView: DrawableView = {
         let drawableView: DrawableView = DrawableView()
-        drawableView.backgroundColor = UIColor.whiteColor()
+        drawableView.backgroundColor = UIColor.white
         return drawableView
     }()
     @IBOutlet weak var recordButton: UIButton!
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.insertSubview(self.drawableView, atIndex: 0)
+        self.view.insertSubview(self.drawableView, at: 0)
 
         self.recordButton.layer.cornerRadius = Constants.recordButtonSize.width / 2.0
         self.recordButton.layer.masksToBounds = true
@@ -53,12 +53,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    private var isRecording: Bool = false {
+    fileprivate var isRecording: Bool = false {
         didSet {
             if self.isRecording {
-                self.recordButton.setTitle("Stop", forState: UIControlState.Normal)
+                self.recordButton.setTitle("Stop", for: UIControlState.normal)
             } else {
-                self.recordButton.setTitle("Record", forState: UIControlState.Normal)
+                self.recordButton.setTitle("Record", for: UIControlState.normal)
             }
         }
     }
@@ -72,17 +72,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ScreenRecorderDelegate {
-    func screenRecordDidStart(screenRecord: ScreenRecord) {
+    func screenRecordDidStart(_ screenRecord: ScreenRecord) {
         print(#function)
 
         self.isRecording = true
     }
 
-    func screenRecordDidStop(screenRecord: ScreenRecord) {
+    func screenRecordDidStop(_ screenRecord: ScreenRecord) {
         print(#function)
     }
 
-    func screenRecordDidCompletion(screenRecord: ScreenRecord, url: NSURL?) {
+    func screenRecordDidCompletion(_ screenRecord: ScreenRecord, url: URL?) {
         print(#function, url)
 
         self.isRecording = false
@@ -91,11 +91,11 @@ extension ViewController: ScreenRecorderDelegate {
             return
         }
 
-        let mediaPlayerViewController: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: url)
-        self.presentViewController(mediaPlayerViewController, animated: true, completion: nil)
+        let mediaPlayerViewController: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: url as URL!)
+        self.present(mediaPlayerViewController, animated: true, completion: nil)
     }
 
-    func screenRecord(screenRecord: ScreenRecord, didFailed error: ScreenRecord.Error) {
+    func screenRecord(screenRecord: ScreenRecord, didFailed error: ScreenRecord.ScreenRecordError) {
         print(#function)
 
         print(error)
