@@ -124,7 +124,7 @@ public protocol ScreenRecordable: class {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func applicationDidEnterBackground(_ notification: Notification) {
+    @objc func applicationDidEnterBackground(_ notification: Notification) {
         print(#function)
         self.stop()
     }
@@ -180,14 +180,14 @@ extension ScreenRecord: ScreenRecordable {
         
         /// writer
         do {
-            self.writer = try AVAssetWriter(outputURL: url, fileType: AVFileTypeAppleM4V)
+            self.writer = try AVAssetWriter(outputURL: url, fileType: AVFileType.m4v)
         } catch {
             self.failed(with: ScreenRecordError.writerSetupFailed)
             return
         }
         
         /// writerInput
-        self.writerInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: [AVVideoCodecKey: AVVideoCodecH264, AVVideoWidthKey: view.frame.size.width, AVVideoHeightKey: view.frame.size.height])
+        self.writerInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: [AVVideoCodecKey: AVVideoCodecH264, AVVideoWidthKey: view.frame.size.width, AVVideoHeightKey: view.frame.size.height])
         self.writerInput?.expectsMediaDataInRealTime = true
         
         guard let writer: AVAssetWriter = self.writer, let writerInput: AVAssetWriterInput = self.writerInput else {
@@ -219,7 +219,7 @@ extension ScreenRecord: ScreenRecordable {
         self.isRecording = true
     }
     
-    func captureFrame(_ displayLink: CADisplayLink) {
+    @objc func captureFrame(_ displayLink: CADisplayLink) {
         self.queue.async {
             guard self.writerInput?.isReadyForMoreMediaData ?? false else {
                 return
