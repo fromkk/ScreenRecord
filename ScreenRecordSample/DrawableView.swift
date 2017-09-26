@@ -22,40 +22,40 @@ class DrawableView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.userInteractionEnabled = true
+        self.isUserInteractionEnabled = true
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        self.userInteractionEnabled = true
+        self.isUserInteractionEnabled = true
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch: UITouch = touches.first else {
             return
         }
 
-        let point: CGPoint = touch.locationInView(self)
+        let point: CGPoint = touch.location(in: self)
         self.currentPath = Path()
-        self.currentPath?.add(point)
+        self.currentPath?.add(point: point)
         self.setNeedsDisplay()
     }
-
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch: UITouch = touches.first else {
             return
         }
 
-        self.move(touch.locationInView(self))
+        self.move(point: touch.location(in: self))
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch: UITouch = touches.first else {
             return
         }
 
-        self.move(touch.locationInView(self))
+        self.move(point: touch.location(in: self))
         if let currentPath = self.currentPath {
             self.paths.append(currentPath)
         }
@@ -63,12 +63,12 @@ class DrawableView: UIView {
         self.currentPath = nil
     }
 
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
         guard let touch: UITouch = touches?.first else {
             return
         }
 
-        self.move(touch.locationInView(self))
+        self.move(point: touch.location(in: self))
         if let currentPath = self.currentPath {
             self.paths.append(currentPath)
         }
@@ -78,51 +78,51 @@ class DrawableView: UIView {
 
     private func move(point: CGPoint) {
         if let currentPath = self.currentPath {
-            currentPath.add(point)
+            currentPath.add(point: point)
             self.setNeedsDisplay()
         }
     }
 
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
 
-        guard let context: CGContextRef = UIGraphicsGetCurrentContext() else {
+        guard let context: CGContext = UIGraphicsGetCurrentContext() else {
             return
         }
 
         if let currentPath = self.currentPath {
             UIGraphicsPushContext(context)
-            CGContextSetLineCap(context, CGLineCap.Round)
-            CGContextSetLineWidth(context, 5.0)
-            CGContextSetStrokeColorWithColor(context, UIColor.blueColor().CGColor)
+            context.setLineCap(CGLineCap.round)
+            context.setLineWidth(5.0)
+            context.setStrokeColor(UIColor.blue.cgColor)
             var didSet: Bool = false
             currentPath.points.forEach({ (point: CGPoint) in
                 if !didSet {
-                    CGContextMoveToPoint(context, point.x, point.y)
+                    context.move(to: point)
                     didSet = true
                 } else {
-                    CGContextAddLineToPoint(context, point.x, point.y)
+                    context.addLine(to: point)
                 }
             })
-            CGContextStrokePath(context)
+            context.strokePath()
             UIGraphicsPopContext()
         }
 
         self.paths.forEach { (path: Path) in
             UIGraphicsPushContext(context)
-            CGContextSetLineCap(context, CGLineCap.Round)
-            CGContextSetLineWidth(context, 5.0)
-            CGContextSetStrokeColorWithColor(context, UIColor.blueColor().CGColor)
+            context.setLineCap(CGLineCap.round)
+            context.setLineWidth(5.0)
+            context.setStrokeColor(UIColor.blue.cgColor)
             var didSet: Bool = false
             path.points.forEach({ (point: CGPoint) in
                 if !didSet {
-                    CGContextMoveToPoint(context, point.x, point.y)
+                    context.move(to: point)
                     didSet = true
                 } else {
-                    CGContextAddLineToPoint(context, point.x, point.y)
+                    context.addLine(to: point)
                 }
             })
-            CGContextStrokePath(context)
+            context.strokePath()
             UIGraphicsPopContext()
         }
     }
